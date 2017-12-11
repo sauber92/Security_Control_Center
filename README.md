@@ -54,9 +54,8 @@ Secure Pi의 기본적 보안 기능을 기반으로 보안 관제 수행에 필
 #### 3-2. 시스템 아키텍쳐  
 
 ![그림 1. SCC System Architecture](README/picture-1.png)  
-<div style="text-align=center"> *[그림 1] SCC System Architecture* </div>  
 
-SCC는 [그림 1]과 같이 SCC-Client, SCC-Server, SCC-Web, Database로 구성되어 있으며 SCC 관리자는 웹 브라우저를 통해 Secure Pi를 모니터링 한다.  
+SCC는 [위 그림](https://github.com/sauber92/Security_Control_Center/blob/master/README/picture-1.png)과 같이 SCC-Client, SCC-Server, SCC-Web, Database로 구성되어 있으며 SCC 관리자는 웹 브라우저를 통해 Secure Pi를 모니터링 한다.  
 
 SCC-Server, SCC-Web, Database가 있는 IoT Control Platform은 Ubuntu PC(16.04 LTS)를 사용하였고, SCC-Client가 있는 Secure Pi는 Raspberry Pi 2 (Model 2)에 Atmel TPM을 장착하였다.  
 
