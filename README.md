@@ -54,7 +54,7 @@ Secure Pi의 기본적 보안 기능을 기반으로 보안 관제 수행에 필
 #### 3-2. 시스템 아키텍쳐  
 
 ![그림 1. SCC System Architecture](README/picture-1.png)  
-*[그림 1] SCC System Architecture*  
+<div style="text-align=center"> *[그림 1] SCC System Architecture* </div>  
 
 SCC는 [그림 1]과 같이 SCC-Client, SCC-Server, SCC-Web, Database로 구성되어 있으며 SCC 관리자는 웹 브라우저를 통해 Secure Pi를 모니터링 한다.  
 
@@ -66,22 +66,22 @@ SCC-Client는 수집한 Secure Pi의 데이터를 SCC-Server에 안전하게 전
 
 SCC-Client는 Secure Pi의 보안 요소기술들이 동작하면서 생성한 로그 파일 및 에러메시지를 SCC-Server에 전달하며, 앞서 설명한 IoT 보안 관제 시스템 설계를 위한 요구사항과 대응하는 기술이다.  
 
-**Secure Key Management Monitor**  
+**1) Secure Key Management Monitor**  
 TSS(TCG Software Stack)는 Secure Pi를 사용하기 위해 필요한 TPM 드라이버와 소프트웨어의 요구사항을 충족시켜 주는 소프트웨어 프레임워크이다. TSS를 사용하면 Secure Pi의 보안 요소기술들에 사용하는 키가 안전하게 생성되고 저장되었다는 것을 확인할 수 있다. SCC-Client는 이를 통해 Secure Key Storage & Management Monitoring을 수행하고 결과값을 SCC-Server로 전달한다.  
 
-**Secure Boot Monitor**  
+**2) Secure Boot Monitor**  
 Secure Pi 부팅 시, TPM이 생성한 키를 사용하여 Secure Boot를 정상적으로 작동했는지를 판단하고 결과값을 SCC-Server로 전달한다.
 
-**Secure Firmware Update Monitor**  
+**3) Secure Firmware Update Monitor**  
 SCC-Server로부터 펌웨어 업데이트를 진행하라는 신호와 펌웨어를 받으면 전송 받은 펌웨어에 대한 무결성 검증을 실시한다. 무결성 검증을 통과하면 업데이트를 진행하고, Secure Pi를 재 부팅 후 결과값을 SCC-Server로 전달한다.  
 
-**Remote Attestation Monitor**  
+**4) Remote Attestation Monitor**  
 Secure Pi 부팅 시, 주요 프로그램(부트로더, 커널, Secure Boot Daemon, 기타 프로그램)에 대한 무결성 검증을 위해 TPM을 사용하여 시그니처를 만들고 SCC-Server로 전달한다.  
 
-**Login Monitor**  
+**5) Login Monitor**  
 리눅스 기반의 플랫폼은 모든 로그인 시도가 /var/log/auth.log 파일에 기록된다. SCC-Client는 주기적으로 Secure Pi의 auth.log 파일을 확인하고 로그인 기록 결과값을 SCC-Server로 전달한다.  
 
-**Packet Monitor**  
+**6) Packet Monitor**  
 Iptables를 사용하면 플랫폼에 들어오는 패킷에 대한 정책을 설정할 수 있고 Iptables가 허용/거절한 패킷에 대한 로그를 기록할 수 있는 방화벽이다. SCC-Client는 주기적으로 Secure Pi의 Iptables의 패킷 허용/정책과 로그를 확인하고 결과값을 SCC-Server로 전달한다.  
 
 #### 3-4. SCC-Server  
