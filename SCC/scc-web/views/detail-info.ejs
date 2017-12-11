@@ -1,0 +1,45 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title text-center">장비 정보</h4>
+    </div>
+    <div class="modal-body info">
+      <table id="infotable" class="table table-bordered">
+        <tbody>
+        <tr>
+          <th class="col">시리얼 넘버</th>
+          <td class="col"> <%= DEVICE.device_id %> </td>
+        </tr>
+        <tr>
+          <th class="col">디바이스 이름</th>
+          <td class="col"> <%= DEVICE.name %> </td>
+        </tr>
+        <tr>
+          <th class="col">사용자</th>
+          <td class="col"> <%= DEVICE.user %> </td>
+        </tr>
+        <tr>
+          <th class="col">디바이스 타입</th>
+          <td class="col"> <%= DEVICE.device %> </td>
+        </tr>
+        <tr>
+          <th class="col">IP 주소</th>
+          <td class="col"> <%= DEVICE.ip %> </td>
+        </tr>
+        <tr>
+          <th class="col">펌웨어 버전</th>
+          <td class="col"> <%= DEVICE.firmware %> </td>
+        </tr>
+        <tr>
+          <th class="col">위치</th>
+          <td class="col"> <%= DEVICE.location %> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">뒤로가기</button>
+    </div>
+  </div>
+</div>

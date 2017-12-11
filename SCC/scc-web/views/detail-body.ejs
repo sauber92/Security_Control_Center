@@ -1,0 +1,93 @@
+<div class="container">
+  <h1><%= h1 %></h1>
+  <h2>상세 보기</h2>
+
+  <p id="name"><%= DEVICE.name %> </p>
+  <button type="button" class="btn btn-secondary detail-btn" data-toggle="modal" data-target="#infoModal">기본 정보</button>
+  <button type="button" class="btn btn-secondary detail-btn" data-toggle="modal" data-target="#editModal">수정</button>
+  <a href="http://localhost:3000/del/<%= DEVICE.id %>" onclick="window.close();">
+    <button class="btn btn-secondary detail-btn">삭제</button>
+  </a>
+
+  <table id="detailtable" class="table table-bordered">
+    <thead>
+    <tr>
+      <th class="span"></th>
+      <th>업데이트 시간</th>
+      <th>상 태</th>
+      <th>로그 확인</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr valign="middle">
+      <th scope="row" class="span">Secure Key Storage & Management</th>
+      <td> <%= secure_key_manage[count_secure_key_manage -1].key_time %> </td>
+      <td> <%= secure_key_manage[count_secure_key_manage -1].key_parity %> </td>
+      <td> <button class="btn btn-secondary" data-toggle="modal" data-target="#tssModal">보기</button> </td>
+    </tr>
+    <tr valign="middle">
+      <th scope="row" class="span">Secure boot</th>
+      <td> <%= secure_boot[count_secure_boot -1].boot_time %> </td>
+      <td> <%= secure_boot[count_secure_boot -1].boot_parity %> </td>
+      <td> <button class="btn btn-secondary" data-toggle="modal" data-target="#bootModal">보기</button> </td>
+    </tr>
+    <tr valign="middle">
+      <th scope="row" class="span">Secure firmware update</th>
+      <td> <%= secure_fw_update[count_secure_fw_update -1].update_time %> </td>
+
+      <%
+        if (DEVICE.firmware == firmware_version[0].version) {
+      %>
+      <td> <%= secure_fw_update[count_secure_fw_update -1].update_parity %> </td>
+      <%
+        } else {
+      %>
+      <td>
+        <div data-toggle="tooltip" data-placement="bottom" title="최신 버전의 펌웨어가 아닙니다.">
+          <button class="btn btn-secondary" data-toggle="modal" data-target="#firmwareModal">
+            펌웨어 업데이트
+          </button>
+        </div>
+      </td>
+      <%
+        }
+      %>
+
+      <td> <button class="btn btn-secondary" data-toggle="modal" data-target="#updateModal">보기</button> </td>
+    </tr>
+    <tr valign="middle">
+      <th scope="row" class="span">Remote Attestation</th>
+      <td> <%= remote_attestation[count_remote_attestation -1].attestation_time %> </td>
+      <td> <%= remote_attestation[count_remote_attestation -1].attestation_parity %> </td>
+      <td> <button class="btn btn-secondary" data-toggle="modal" data-target="#attestationModal">보기</button> </td>
+    </tr>
+   <tr valign="middle">
+      <th scope="row" class="span">Login Monitoring</th>
+      <td> <%= login_monitoring[count_login_monitoring -1].login_time %> </td>
+      <td></td>
+      <td> <button class="btn btn-secondary" data-toggle="modal" data-target="#loginModal">보기</button> </td>
+    </tr>
+    <tr valign="middle">
+      <th scope="row" class="span">Packet Monitoring</th>
+      <td> <%= packet_monitoring[count_packet_monitoring -1].packet_time %> </td>
+      <td></td>
+      <td> <button class="btn btn-secondary" data-toggle="modal" data-target="#packetModal">보기</button> </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="infoModal" class="modal fade" role="dialog"> <% include ./detail-info.ejs %> </div>
+<div id="editModal" class="modal fade" role="dialog"> <% include ./detail-edit.ejs %> </div>
+
+<div id="tssModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-tss.ejs %> </div>
+<div id="bootModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-boot.ejs %> </div>
+<div id="updateModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-update.ejs %> </div>
+<div id="attestationModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-attestation.ejs %> </div>
+<div id="integrityModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-integrity.ejs %> </div>
+<div id="encryptionModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-encryption.ejs %> </div>
+<div id="loginModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-login.ejs %> </div>
+<div id="packetModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./detail-packet.ejs %> </div>
+
+<div id="firmwareModal" class="modal fade bd-example-modal-lg" role="dialog"> <% include ./firmware.ejs %> </div>

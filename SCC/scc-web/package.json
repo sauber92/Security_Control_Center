@@ -1,0 +1,29 @@
+{
+  "author": "Junyoung Jung <jjy920517@gmail.com>",
+  "name": "scc-web",
+  "description": "scc webpage",
+  "version": "0.0.0",
+  "repository": {
+    "url": "https://github.com/sauber92/scc-web"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "ejs": "~2.5.5",
+    "express": "~4.14.0",
+    "express-session": "~1.13.0",
+    "forever": "^0.15.3",
+    "multer": "^1.3.0",
+    "mysql": "~2.12.0",
+    "net-ping": "^1.2.0",
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "test": "nodemon index",
+    "start": "forever start index.js"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

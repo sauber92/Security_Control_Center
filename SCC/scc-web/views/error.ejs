@@ -1,0 +1,28 @@
+<div class="err-device number">
+  <p>총 디바이스 수</p>
+  <strong class="err-detail"><%= count %></strong>
+</div>
+
+<div class="err-device-err">
+  <p>이상 디바이스 수</p>
+  <strong class="err-detail"><%= err_count %></strong>
+</div>
+
+<div class="err-device time">
+  <p>마지막 갱신 시간</p>
+  <strong id="currentTime" class="err-detail"></strong>
+</div>
+
+<script>
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var min = date.getMinutes();
+  var Time = year + "." + month + "." + day + " " + hour + ":" + min;
+
+  $("#currentTime").html(Time);
+
+  setTimeout("location.reload()", 300000)
+</script>

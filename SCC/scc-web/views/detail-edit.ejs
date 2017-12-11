@@ -1,0 +1,44 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title text-center">장비 정보 수정</h4>
+    </div>
+    <div class="modal-body">
+      <form id="form" name="new" method="post" action="/edit/<%= DEVICE.id %>">
+        <div class="form-group">
+          <label for="formGroupExampleInput">시리얼 넘버</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="<%= DEVICE.device_id %>" value="<%= DEVICE.device_id %>" name="device_id">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">디바이스 이름</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= DEVICE.name %>" value="<%= DEVICE.name %>" name="name">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">사용자</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= DEVICE.user %>" value="<%= DEVICE.user %>" name="user">
+        </div>
+        <div class="form-group" style="display: none">
+          <label for="formGroupExampleInput">디바이스 타입</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= DEVICE.device %> " value="<%= DEVICE.device %>" name="device">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">IP 주소</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= DEVICE.ip %>" value="<%= DEVICE.ip %>" name="ip">
+        </div>
+        <div class="form-group" style="display: none">
+          <label for="formGroupExampleInput">펌웨어 버전</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= DEVICE.firmware %>" value="<%= DEVICE.firmware %>" name="firmware">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">위치</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= DEVICE.location %>" value="<%= DEVICE.location %>" name="location">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">수정</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

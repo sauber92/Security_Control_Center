@@ -1,0 +1,41 @@
+<table id="mytable" class="table table-hover table-bordered">
+  <thead>
+  <tr>
+    <th>시리얼 넘버</th>
+    <th>디바이스 명</th>
+    <th>사용자</th>
+    <th>디바이스 타입</th>
+    <th>펌웨어 버전</th>
+    <th>상 태</th>
+    <th>세부 항목</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%
+    for(var i = 0; i < SCC.length; i++) {
+  %>
+  <tr>
+    <td class="cell_color"> <%= SCC[i].device_id %></td>
+    <td class="cell_color"> <%= SCC[i].name %></td>
+    <td class="cell_color"> <%= SCC[i].user %></td>
+    <td class="cell_color"> <%= SCC[i].device %></td>
+    <td class="cell_color"> <%= SCC[i].firmware %></td>
+    <td class="cell_color"> <%= SCC[i].parity %></td>
+    <%
+      var parity = SCC[i].parity;
+      if (parity === 'UNKOWN') {
+    %>
+    <td> <button class="btn btn-secondary view-btn" data-toggle="tooltip" data-placement="bottom" title="이 디바이스를 삭제하시겠습니까?" onclick="window.open('/del/'+ <%= SCC[i].id %>)"> 삭제 </button></td>
+    <%
+      } else {
+    %>
+    <td class="cell_color"> <button class="btn btn-secondary view-btn" onclick="window.open('/detail/'+ <%= SCC[i].id %> )"> 보기 </button></td>
+    <%
+      }
+    %>
+  </tr>
+  <%
+    }
+  %>
+  </tbody>
+</table>

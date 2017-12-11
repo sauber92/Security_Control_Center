@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 id="title">Security Control Center</h1>
+  <div id="description">
+    SCC는 COTS IoT 디바이스 보안 플랫폼(SecurePi, SArduino)의 보안 관제를 위한 시스템입니다.
+  </div>
+</div>
+
+<div class="container">
+  <%
+    var SCC = rows;
+  %>
+  <div id="errContents"> <% include ./error.ejs %> </div>
+  <h2 class="subtitle">디바이스 상세 정보</h2>
+  <div id="contents"> <% include ./table.ejs %> </div>
+  <button type="button" id="newBtn" class="btn btn-secondary" data-toggle="modal" data-target="#inputModal">새로운 디바이스 등록</button>
+  <button type="button" id="newBtn" class="btn btn-secondary" data-toggle="modal" data-target="#fwModal">최신 펌웨어 버전 변경</button>
+</div>
+
+<div id="inputModal" class="modal fade" role="dialog"> <% include ./newcell.ejs %> </div>
+<div id="fwModal" class="modal fade" role="dialog"> <% include ./newfw.ejs %> </div>

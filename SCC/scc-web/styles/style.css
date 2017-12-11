@@ -1,0 +1,200 @@
+html, body {
+  margin: 5px 0 0;
+  padding: 0;
+  font-family: Arial, Verdana, sans-serif;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+a {
+  color: #333;
+}
+
+.container {
+  text-align: center;
+}
+
+.subtitle {
+ margin-top: 60px;
+}
+
+.table tbody>tr>td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+#name {
+  font-size: 25px;
+}
+
+#mytable {
+  text-align: center;
+  width: 1000px;
+  margin: 30px auto auto;
+}
+
+#mytable th {
+  background-color: #b8b8b8;
+  text-align: center;
+}
+
+#newBtn {
+  width: 1000px;
+  height: 50px;
+  margin-top: 25px;
+  font-size: 15px;
+}
+
+#infotable th {
+  width: 180px;
+  background-color: #b8b8b8;
+  text-align: center;
+}
+
+.detail-btn {
+  width: 100px;
+}
+
+#detailtable {
+  margin-top: 30px;
+}
+
+#detailtable th {
+  background-color: #b8b8b8;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#detailtable .span {
+  width: 200px;
+  height: 61px;
+}
+
+#detailtable .span2 {
+  width: 500px;
+}
+
+.detail-page .log-page {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  top: 250px;
+  text-align: center;
+  overflow: auto;
+  background-color: #e6e6fa;
+}
+.detail-page .log-page p {
+  display: inline;
+  margin-right: 20px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.detail-page .log-page button {
+  margin-bottom: 20px;
+}
+.detail-page .log-page table {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  border: solid 1px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.views-tg {
+  text-align: center;
+  vertical-align: top;
+  font-size: 14px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 1000px;
+  margin: 30px auto auto;
+  position: static;
+}
+
+.views-tg th {
+  font-weight: normal;
+  padding: 10px 5px;
+  border: 1px solid;
+  overflow: hidden;
+  word-break: normal;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.views-tg td {
+  padding: 10px 5px;
+  border: 1px solid;
+  overflow: hidden;
+  word-break: normal;
+  background-color: #ffffff;
+}
+
+.err-device {
+  margin-top: 50px;
+  display: inline-block;
+  width: 330px;
+  height: 120px;
+  padding: 15px;
+  background-color: #e6e6e6;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.err-device-err {
+  display: inline-block;
+  width: 330px;
+  height: 120px;
+  padding: 15px;
+  background-color: #b8b8b8;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.err-detail {
+  font-size: 30px;
+}
+
+.firmware-ver {
+  float: left;
+  width: 50%;
+  height: 400px;
+  font-size: 20px;
+  background-color: #f0f8ff;
+}
+
+.firmware-ver #currentVer {
+  margin-top: 160px;
+}
+
+.firmware-log {
+  float: right;
+  width: 50%;
+  height: 400px;
+  background-color: #ffe4e1;
+  text-align: center;
+  overflow: auto;
+}
+
+.firmware-log table {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  border: solid 1px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.firmware-update p {
+  margin-top: 70px;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.firmware-update button {
+  font-size: 15px;
+}
